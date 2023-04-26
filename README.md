@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GITHUB](https://github.com/akkitheakhil/tip-calculator-app.git)
-- Live Site URL: [WEB](https://your-live-site-url.com)
+- Live Site URL: [WEB](https://akkitheakhil.github.io/tip-calculator-app/)
 
 ### Built with
 

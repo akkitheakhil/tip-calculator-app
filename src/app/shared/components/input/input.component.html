@@ -4,7 +4,7 @@
     {{ errorLabels[object.keys(control.errors ?? {})[0]] }}
   </i>
   <div class="input-wrapper">
-    <i *ngIf="icon"> <img [src]="'/assets/images/' + icon + '.svg'" /> </i>
+    <i *ngIf="icon"> <img [src]="'assets/images/' + icon + '.svg'" /> </i>
     <input
       #input
       [placeholder]="placeholder"
