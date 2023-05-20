@@ -1,27 +1,66 @@
 <main class="main-container">
   <header class="header">
-    <div class="logo">
-      <img src="assets/images/logo.svg" priority />
-    </div>
+    <h1 class="logo">
+      <img src="assets/images/logo.svg" priority alt="logo" />
+    </h1>
   </header>
   <article class="calculator">
     <section class="form-container">
-      <app-input label="Bill" type="number" placeholder="0" icon="icon-dollar" [control]="billControl" [errorLabels]="commonControlErrors" (change)="handleBillAmountChange($event)"/>
+      <app-input
+        label="Bill"
+        type="number"
+        placeholder="0"
+        icon="icon-dollar"
+        [control]="billControl"
+        [errorLabels]="commonControlErrors"
+        (change)="handleBillAmountChange($event)"
+      />
       <div class="tip-selector">
         <label class="select-label">Select Tip %</label>
         <div class="tip-selector-buttons">
           <ng-container *ngFor="let item of tipSelectors">
-            <app-button [label]="item + '%'" [isActive]="item === tip()" (click)="handleTipSelection(item);input.control.setValue('')" />
+            <app-button
+              [label]="item + '%'"
+              [isActive]="item === tip()"
+              (click)="handleTipSelection(item); input.control.setValue('')"
+            />
           </ng-container>
-          <app-input #input placeholder="Custom" type="number" (change)="handleTipSelection($event)" />
+          <app-input
+            #input
+            placeholder="Custom"
+            type="number"
+            (change)="handleTipSelection($event)"
+          />
         </div>
       </div>
-      <app-input label="Number of People" placeholder="0" type="number" icon="icon-person" [control]="personControl" [errorLabels]="commonControlErrors" (change)="handlePersonChange($event)"/>
+      <app-input
+        label="Number of People"
+        placeholder="0"
+        type="number"
+        icon="icon-person"
+        [control]="personControl"
+        [errorLabels]="commonControlErrors"
+        (change)="handlePersonChange($event)"
+      />
     </section>
     <section class="result-container">
-      <app-result-viewer text="Tip Amount" subText="person" [value]="this.tipAmountPerPerson() | infinity"></app-result-viewer>
-      <app-result-viewer text="Total" subText="person" [value]="this.totalAmount() | infinity"></app-result-viewer>
-      <app-button class="reset-button" label="Reset" type="secondary" [disabled]="billControl.invalid && personControl.invalid" (click)="handleReset();input.control.setValue('')" />
+      <app-result-viewer
+        text="Tip Amount"
+        subText="person"
+        [value]="this.tipAmountPerPerson() | infinity"
+      ></app-result-viewer>
+      <app-result-viewer
+        text="Total"
+        subText="person"
+        [value]="this.totalAmount() | infinity"
+      ></app-result-viewer>
+      <app-button
+        class="reset-button"
+        label="Reset"
+        type="secondary"
+        [disabled]="billControl.invalid && personControl.invalid"
+        (click)="handleReset(); input.control.setValue('')"
+      />
     </section>
   </article>
 </main>
